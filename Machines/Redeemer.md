@@ -81,7 +81,7 @@ redis-cli -h 10.129.130.151
 
 10.129.130.151:6379> 
 ```
-## Flag
+# Flag
 
  🗹 Ejecutar los siguientes comandos para obtener la flag:
 
