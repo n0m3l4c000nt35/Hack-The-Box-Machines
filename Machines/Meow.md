@@ -13,6 +13,8 @@ PING 10.129.194.222 (10.129.194.222) 56(84) bytes of data.
 rtt min/avg/max/mdev = 2105.123/2105.123/2105.123/0.000 ms
 ```
 
+> Sistema operativo:  **Linux**
+
 🗹 Identificar puertos abiertos y qué servicios están corriendo:
 
 ```shell
@@ -31,8 +33,6 @@ PORT   STATE SERVICE VERSION
 23/tcp open  telnet  Linux telnetd
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
-
-El sistema operativo identificado es **Linux**.
 
 | Puerto | Servicio | Versión       |
 | ------ | -------- | ------------- |
@@ -173,7 +173,7 @@ log_on_failure += USERID
 - `user = root`: Especifica el usuario bajo el cual se ejecutará el servicio Telnet. En este caso, se ejecutará como el usuario root.
 - `server = /usr/sbin/in.telnetd`: Especifica la ubicación del programa `in.telnetd`, que es el servidor Telnet que maneja las conexiones entrantes.
 - `log_on_failure += USERID`: Indica que se debe registrar la información del usuario (`USERID`) en caso de fallo de inicio de sesión.
-## Autopwn
+# Autopwn
 
 ```python
 #!/usr/bin/env python3
