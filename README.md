@@ -5,6 +5,6 @@
 3. ➡️ [Dancing](/Machines/Dancing.md)
 4. ➡️ [Redeemer](/Machines/Redeemer.md)
 5. ➡️ [Explosion](/Machines/Explosion.md)
-6. ➡️ [Redeemer](/Machines/Redeemer.md)
+6. ➡️ [Preignition](/Machines/Preignition.md)
 
 📄 [Planilla de las máquinas resueltas](https://docs.google.com/spreadsheets/d/1Tg5swu9wW-01-7sXeFAU3sonM8d3qLy39BhVSrhvN9I/edit?usp=sharing)
