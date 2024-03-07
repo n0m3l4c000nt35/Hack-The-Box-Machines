@@ -1,3 +1,5 @@
+# Explosion
+
 🗹 Verificar si el host está activo:
 
 ```shell
@@ -92,6 +94,7 @@ Host script results:
 | 49669  | unknown       | ?                                       |
 | 49670  | tcpwrapped    | ?                                       |
 | 49671  | msrpc         | Microsoft Windows RPC                   |
+
 🗹 Listar servicios disponibles en el servidor sin proporcionar contraseña:
 
 ```shell
