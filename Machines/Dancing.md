@@ -79,7 +79,7 @@ Host script results:
 | 49668  | unknown      | Microsoft Windows RPC                   |
 | 49669  | unknown      | Microsoft Windows RPC                   |
 
-¿Qué es netbios?
+¿Qué es netbios?  
 [RFC](https://www.rfc-editor.org/rfc/rfc1002.txt)
 
 🗹 Listar servicios disponibles en el servidor sin proporcionar contraseña:
