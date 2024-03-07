@@ -13,7 +13,7 @@ PING 10.129.165.154 (10.129.165.154) 56(84) bytes of data.
 rtt min/avg/max/mdev = 167.795/167.795/167.795/0.000 ms
 ```
 
-El sistema operativo identificado es **Windows**.
+> Sistema operativo: **Windows**
 
 ```shell
 sudo nmap -p- -sS --open --min-rate 5000 -n -Pn -vv 10.129.165.154 -oG openPorts
@@ -79,7 +79,7 @@ Host script results:
 | 49668  | unknown      | Microsoft Windows RPC                   |
 | 49669  | unknown      | Microsoft Windows RPC                   |
 
-¿Qué es netbios?  
+¿Qué es netbios?
 [RFC](https://www.rfc-editor.org/rfc/rfc1002.txt)
 
 🗹 Listar servicios disponibles en el servidor sin proporcionar contraseña:
@@ -94,6 +94,10 @@ Sharename       Type      Comment
 	IPC$            IPC       Remote IPC
 	WorkShares      Disk      
 ```
+
+## Flag
+
+La flag se encuentra en el directorio `/`
 
 ## Flag
 
