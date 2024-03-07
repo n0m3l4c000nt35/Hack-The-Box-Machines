@@ -71,7 +71,7 @@ Using binary mode to transfer files.
 ftp>
 ```
 
-### Root flag
+### Flag
 
 La **flag** se encuentra en el directorio principal:
 
@@ -130,4 +130,5 @@ if __name__ == '__main__':
 
     main()
 ```
+
 ![Fawn Autopwn](/Images/fawn_autopwn.png)
