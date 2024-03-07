@@ -1,3 +1,5 @@
+# Preignition
+
 🗹 Verificar si el host está activo:
 
 ```shell
@@ -36,6 +38,7 @@ PORT   STATE SERVICE VERSION
 | Puerto | Servicio | Versión      |
 | ------ | -------- | ------------ |
 | 80     | http     | nginx 1.14.2 |
+
 🗹 Escanear la web en busca de directorios o archivos con la extensión `php`:
 
 ```shell
@@ -50,7 +53,7 @@ ID           Response   Lines    Word       Chars       Payload
 
 🗹 Ingresar a la web encontrada `http://10.129.147.6/admin.php`.
 
-Probar las credenciales `admin` para el campo `username` y `admin` para el campo `password`.
+🗹 Probar las credenciales `admin` para el campo `username` y `admin` para el campo `password`.
 ## Flag
 
 La flag se muestra en pantalla una vez se ingresa al panel de administración.
