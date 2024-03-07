@@ -1,3 +1,5 @@
+# Redeemer
+
 🗹 Verificar si el host está activo:
 
 ```shell
@@ -34,7 +36,8 @@ PORT     STATE SERVICE VERSION
 | Puerto | Servicio | Versión                     |
 | ------ | -------- | --------------------------- |
 | 6379   | redis    | Redis key-value store 5.0.7 |
-¿Qué es **Redis**?
+
+¿Qué es **Redis**?  
 [Web Oficial](https://redis.io/)
 
 🗹 Buscar scripts de **nmap** relacionados al servicio **redis**:
@@ -78,7 +81,7 @@ redis-cli -h 10.129.130.151
 
 10.129.130.151:6379> 
 ```
-# Flag
+## Flag
 
  🗹 Ejecutar los siguientes comandos para obtener la flag:
 
