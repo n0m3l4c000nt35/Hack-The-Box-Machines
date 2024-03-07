@@ -95,6 +95,6 @@ Sharename       Type      Comment
 	WorkShares      Disk      
 ```
 
-## Flag:
+## Flag
 
 La flag se encuentra en el directorio `/`
