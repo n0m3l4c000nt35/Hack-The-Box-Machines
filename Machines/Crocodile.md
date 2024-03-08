@@ -1,3 +1,5 @@
+# Crocodile
+
 🗹 Verificar si el host está activo:
 
 ```shell
@@ -94,7 +96,7 @@ local: allowed.userlist.passwd remote: allowed.userlist.passwd
 
 🗹 Interceptar la petición `POST /login.php` con **Burpsuite**. Enviar la petición al intruder. Realizar un ataque de tipo **Cluster Bomb** usando las listas descargas del servidor. Verificar los resultados del ataque buscando en el status code o length para dar con los datos correctos.
 
-🗹 Ingresar el usuario y contraseña encontrados en la página de `login.php`.
+🗹 Ingresar el usuario y contraseña encontrados en la página `login.php`.
 ## Flag
 
 La flag se encuentra en el dashboard.
