@@ -1,3 +1,5 @@
+# Appointment
+
 🗹 Verificar si el host está activo:
 
 ```shell
@@ -32,6 +34,10 @@ PORT   STATE SERVICE VERSION
 |_http-server-header: Apache/2.4.38 (Debian)
 |_http-title: Login
 ```
+
+| Puerto | Servicio | Versión             |
+| ------ | -------- | ------------------- |
+| 80     | http     | Apache httpd 2.4.38 |
 
 🗹 Realizar una petición POST con `curl` modificando el campo `username`:
 
