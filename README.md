@@ -13,5 +13,6 @@
 11. ➡️ [Crocodile](/Machines/Crocodile.md)
 12. ➡️ [Responder](/Machines/Responder.md)
 13. ➡️ [Three](/Machines/Three.md)
+14. ➡️ [Ignition](/Machines/Ignition.md)
 
 📄 [Planilla de las máquinas resueltas](https://docs.google.com/spreadsheets/d/1Tg5swu9wW-01-7sXeFAU3sonM8d3qLy39BhVSrhvN9I/edit?usp=sharing)
