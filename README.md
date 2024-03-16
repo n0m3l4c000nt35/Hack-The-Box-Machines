@@ -19,5 +19,6 @@
 17. ➡️ [Pennyworth](/Machines/Pennyworth.md)
 18. ➡️ [Tactics](/Machines/Tactics.md)
 19. ➡️ [Archetype](/Machines/Archetype.md)
+20. ➡️ [Oopsie](/Machines/Oopsie.md)
 
 📄 [Planilla de las máquinas resueltas](https://docs.google.com/spreadsheets/d/1Tg5swu9wW-01-7sXeFAU3sonM8d3qLy39BhVSrhvN9I/edit?usp=sharing)
