@@ -16,7 +16,8 @@
 14. ➡️ [Ignition](/Machines/Ignition.md)
 15. ➡️ [Bike](/Machines/Bike.md)
 16. ➡️ [Funnel](/Machines/Funnel.md)
-17. ➡️ [Tactics](/Machines/Tactics.md)
-18. ➡️ [Archetype](/Machines/Archetype.md)
+17. ➡️ [Pennyworth](/Machines/Pennyworth.md)
+18. ➡️ [Tactics](/Machines/Tactics.md)
+19. ➡️ [Archetype](/Machines/Archetype.md)
 
 📄 [Planilla de las máquinas resueltas](https://docs.google.com/spreadsheets/d/1Tg5swu9wW-01-7sXeFAU3sonM8d3qLy39BhVSrhvN9I/edit?usp=sharing)
